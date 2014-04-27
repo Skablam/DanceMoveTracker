@@ -1,0 +1,4 @@
+Flask==0.10.1
+Flask-Assets==0.9
+Flask-BasicAuth
+Jinja2==2.7.2
