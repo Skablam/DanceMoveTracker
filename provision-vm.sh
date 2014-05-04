@@ -2,6 +2,12 @@
 
 sudo apt-get update
 
-sudo apt-get install python-pip
+sudo apt-get install -y python-pip
 
 sudo pip install -r /vagrant/requirements.txt 	
+
+gem install bundler 
+
+cd /vagrant
+
+bundle install

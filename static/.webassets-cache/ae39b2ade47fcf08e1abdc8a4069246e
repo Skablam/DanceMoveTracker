@@ -1,0 +1,3 @@
+V@import url(base/base.css);\u000a@import url(vendor/bootstrap-theme.min.css);\u000a@import url(vendor/bootstrap.min.css);\u000a/* line 1, /vagrant/static/stylesheets/views/welcome.scss */\u000a.jumbotron {\u000a  text-align: center;\u000a  border-bottom: 1px solid #e5e5e5;\u000a}\u000a
+p1
+.
