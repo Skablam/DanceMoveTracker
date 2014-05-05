@@ -1,64 +1,66 @@
 {% extends "base.html" %}
 
-{% block head %}
-
-	<link href="static/css/move-list.css" rel="stylesheet">
-
-{% endblock %}
-
+{% block head %}{% endblock %}
 
 {% block body %}
 
-	<div class="container">
+	<br>	
 
-		<br><br><br><br> 	
+	<h1>Your Move List</h1>
 
-		<h1>Your Move List</h1>
+	<br><br>
 
-		<br><br>
+	<form class="form-inline" role="form" name="move-filter">
+	  <div class="form-group">	
+		<input class="form-control" type="text" name ="move-text" placeholder ="Filter">
+		<select class="form-control">
+		  <option>Name</option>
+		  <option>Description</option>
+		  <option>Category</option>
+		  <option>Tags</option>
+		</select>
+	  </div>
+	</form>
 
-		<form class="form-inline" role="form" name="move-filter">
-		  <div class="form-group">	
-			<input class="form-control" type="text" name ="move-text" placeholder ="Filter">
-			<select class="form-control">
-			  <option>Name</option>
-			  <option>Description</option>
-			  <option>Category</option>
-			  <option>Tags</option>
-			</select>
-		  </div>
-		</form>
+	<div class="panel panel-default">
 
-		<div class="panel panel-default">
-
-		  <!-- Table -->
-		  <table class="table">
-	        <tr>
-	            <th>Name</th>
-	            <th>Description</th>
-	            <th>Category</th>
-	            <th>Tags</th>
-	        </tr>
-	        <tr>
-	            <td >Swingout</td>
-	            <td>Core swing move</td>
-	            <td>Lindyhop</td>
-	            <td>#Lindyhop #8-beat #Swingout</td>
-	        </tr>
-	        <tr>
-	            <td>Circle</td>
-	            <td>8 beat lindy moved. Closed to close.</td>
-	            <td>Lindyhop</td>
-	            <td>#Lindyhop #8-beat #Circle</td>
-	        </tr>
-	        <tr>
-	            <td>Texas Tommy</td>
-	            <td>8 beat lindy moved. Closed to open.</td>
-	            <td>Lindyhop</td>
-	            <td>#Lindyhop #8-beat #Texas Tommy</td>
-	        </tr>
-		  </table>
-		</div>
+	  <!-- Table -->
+	  <table class="table">
+        <tr>
+            <th>Name</th>
+            <th>Description</th>
+            <th>Category</th>
+            <th>Tags</th>
+        </tr>
+        <tr>
+            <td >Swingout</td>
+            <td>Core swing move</td>
+            <td>Lindyhop</td>
+            <td>#Lindyhop #8-beat #Swingout</td>
+        </tr>
+        <tr>
+            <td>Circle</td>
+            <td>8 beat lindy moved. Closed to close.</td>
+            <td>Lindyhop</td>
+            <td>#Lindyhop #8-beat #Circle</td>
+        </tr>
+        <tr>
+            <td>Texas Tommy</td>
+            <td>8 beat lindy moved. Closed to open.</td>
+            <td>Lindyhop</td>
+            <td>#Lindyhop #8-beat #Texas Tommy</td>
+        </tr>
+	  </table>
 	</div>
+
+{% endblock %}
+
+{% block extra_js %}
+
+<script>
+
+	$("#movelist").addClass("active");	
+
+</script>
 
 {% endblock %}

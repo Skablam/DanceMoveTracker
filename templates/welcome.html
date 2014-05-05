@@ -1,11 +1,6 @@
 {% extends "base.html" %}
 
-{% block head %}
-
-	<link href="static/css/welcome.css" rel="stylesheet">
-
-{% endblock %}
-
+{% block head %}{% endblock %}
 
 {% block body %}
 	<br>
@@ -16,28 +11,14 @@
 		<p><a class="btn btn-lg btn-primary" href="#" role="button">Get Started</a></p>
 	</div>
 
-	<div class="row">
-		<div class="col-lg-6">
-		  <h4>Subheading</h4>
-		  <p>Donec id elit non mi porta gravida at eget metus. Maecenas faucibus mollis interdum.</p>
+{% endblock %}
 
-		  <h4>Subheading</h4>
-		  <p>Morbi leo risus, porta ac consectetur ac, vestibulum at eros. Cras mattis consectetur purus sit amet fermentum.</p>
+{% block extra_js %}
 
-		  <h4>Subheading</h4>
-		  <p>Maecenas sed diam eget risus varius blandit sit amet non magna.</p>
-		</div>
+<script>
 
-		<div class="col-lg-6">
-		  <h4>Subheading</h4>
-		  <p>Donec id elit non mi porta gravida at eget metus. Maecenas faucibus mollis interdum.</p>
+	$("#home").addClass("active");	
 
-		  <h4>Subheading</h4>
-		  <p>Morbi leo risus, porta ac consectetur ac, vestibulum at eros. Cras mattis consectetur purus sit amet fermentum.</p>
-
-		  <h4>Subheading</h4>
-		  <p>Maecenas sed diam eget risus varius blandit sit amet non magna.</p>
-		</div>
-	</div>
+</script>
 
 {% endblock %}

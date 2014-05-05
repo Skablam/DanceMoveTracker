@@ -1,13 +1,39 @@
 {% extends "base.html" %}
 
-{% block head %}
+{% block head %}{% endblock %}
 
-	
+{% block body %}
+
+<br>
+
+<h1>Please login</h1>
+
+<br>
+
+<div class="row">
+	<div class="col-lg-6">
+		<form role="form">
+			<div class="form-group">
+				<label for="username">Username</label>
+				<input type="text" class="form-control" id="username"><br>
+				<label for="login-password">Password</label>
+				<input type="password" class="form-control" id="login-password">
+				<br>
+				<a href="" class="btn btn-lg btn-primary">login</a>
+			</div>
+		</form>
+	</div>
+</div>
 
 {% endblock %}
 
 
-{% block body %}
+{% block extra_js %}
 
+<script>
+
+	$("#login").addClass("active");	
+
+</script>
 
 {% endblock %}

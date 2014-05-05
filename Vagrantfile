@@ -11,7 +11,7 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
   config.vm.network "forwarded_port", guest: 5000, host: 5000
 
   config.vm.provider :virtualbox do |vb|
-    vb.customize ['modifyvm', :id, '--memory', ENV['VM_MEMORY'] || 1024]
+    vb.customize ['modifyvm', :id, '--memory', ENV['VM_MEMORY'] || 2048]
     vb.customize ['modifyvm', :id, '--natdnshostresolver1', 'on']
     vb.customize ['modifyvm', :id, '--natdnsproxy1', 'on']
   end
