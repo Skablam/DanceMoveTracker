@@ -1,8 +1,19 @@
-from flask import Flask, render_template
+import os
+
+from flask import Flask, render_template, session
 from flask.ext.assets import Environment, Bundle
+from flask_debugtoolbar import DebugToolbarExtension
 
 app = Flask(__name__)
 
+if os.environ.get('DEBUG_ON', None) == 'False':
+	app.debug=False
+else:
+	app.debug=True
+
+app.config['SECRET_KEY'] = os.urandom(24)
+
+#toolbar = DebugToolbarExtension(app)
 
 # Static assets
 assets = Environment(app)
@@ -10,7 +21,7 @@ css_main = Bundle(
     'stylesheets/main.scss',
     filters='scss',
     output='build/stylesheets/main.css',
-    depends="main.scss"
+    depends="stylesheets/views/*.scss"
 )
 assets.register('css_main', css_main)
 
@@ -30,5 +41,14 @@ def login():
 def register():
     return render_template('/register.html')   
 
+@app.route("/about")
+def about():
+    return render_template('/about.html')  
+
+@app.route("/contact")
+def contact():
+    return render_template('/contact.html')  
+
+
 if __name__ == "__main__":
-    app.run(debug=True, host="0.0.0.0")
+    app.run(host="0.0.0.0")

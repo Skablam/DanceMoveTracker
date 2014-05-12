@@ -1,5 +1,8 @@
 #!/usr/bin/env bash
 
+echo 'export DEBUG_ON=True' > /home/vagrant/.bash_profile
+echo 'cd /vagrant' >> /home/vagrant/.bash_profile
+
 sudo apt-get update
 
 sudo apt-get install -y python-pip
@@ -11,3 +14,5 @@ gem install bundler
 cd /vagrant
 
 bundle install
+
+export DEBUGON=true
