@@ -4,61 +4,74 @@
 
 {% block body %}
 
-	<br>	
+	<br>
 
-	<h1>Your Move List</h1>
+   <h1>Your Move List</h1>
 
-	<br><br>
+   <br><br>    
 
-	<form class="form-inline" role="form" name="move-filter">
-	  <div class="form-group">	
-		<input class="form-control" type="text" name ="move-text" placeholder ="Filter">
-		<select class="form-control">
-		  <option>Name</option>
-		  <option>Description</option>
-		  <option>Category</option>
-		  <option>Tags</option>
-		</select>
-	  </div>
-	</form>
+    <div class="row">
 
-	<div class="panel panel-default">
+        <div class="col-md-6">
+            <form class="form-inline" role="form" name="move-filter">
+        	  <div class="form-group">	
+        		<input class="form-control" type="text" name ="move-text" placeholder ="Filter">
+        		<select class="form-control">
+        		  <option>Name</option>
+        		  <option>Description</option>
+        		  <option>Category</option>
+        		  <option>Tags</option>
+        		</select>
+        	  </div>
+        	</form>
+        </div>
+        <div class="col-md-6">
+            <a href="/addmove" class="btn btn-primary add-new-move"><span class="glyphicon glyphicon-plus"></span> add new move</a>
+            <br>
+        </div>
 
-	  <!-- Table -->
-	  <table class="table">
-        <tr>
-            <th>Name</th>
-            <th>Description</th>
-            <th>Category</th>
-            <th>Tags</th>
-            <th>Video Link</th>
-            <th>Fav</th>
-        </tr>
-        <tr>
-            <td >Swingout</td>
-            <td>Core swing move</td>
-            <td>Lindyhop</td>
-            <td>#Lindyhop #8-beat #Swingout</td>
-            <td><a href="www.google.com">www.google.com</a></td>
-            <td><img id="fav-star" src="{{ url_for('static', filename = 'images/not-fav.png') }}" alt="Favourite Star" width="20" height="20"/></td>
-        </tr>
-        <tr>
-            <td>Circle</td>
-            <td>8 beat lindy moved. Closed to close.</td>
-            <td>Lindyhop</td>
-            <td>#Lindyhop #8-beat #Circle</td>
-            <td></td>
-            <td></td>
-        </tr>
-        <tr>
-            <td>Texas Tommy</td>
-            <td>8 beat lindy moved. Closed to open.</td>
-            <td>Lindyhop</td>
-            <td>#Lindyhop #8-beat #Texas Tommy</td>
-            <td></td>
-            <td></td>
-        </tr>
-	  </table>
+    </div>
+
+
+
+	<div class="row">
+
+        <div class="col-md-12">
+            <div class="panel panel-default">
+
+        	  <!-- Table -->
+        	  <table class="table">
+                <tr>
+                    <th>Name</th>
+                    <th>Category</th>
+                    <th>Tags</th>
+                    <th>Video Link</th>
+                    <th>Fav</th>
+                </tr>
+                <tr>
+                    <td >Swingout</td>
+                    <td>Lindyhop</td>
+                    <td>#Lindyhop #8-beat #Swingout</td>
+                    <td><a href="www.google.com">www.google.com</a></td>
+                    <td><img id="fav-star" src="{{ url_for('static', filename = 'images/not-fav.png') }}" alt="Favourite Star" width="20" height="20"/></td>
+                </tr>
+                <tr>
+                    <td>Circle</td>
+                    <td>Lindyhop</td>
+                    <td>#Lindyhop #8-beat #Circle</td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>Texas Tommy</td>
+                    <td>Lindyhop</td>
+                    <td>#Lindyhop #8-beat #Texas Tommy</td>
+                    <td></td>
+                    <td></td>
+                </tr>
+        	  </table>
+            </div>
+        </div>
 	</div>
 
 {% endblock %}
