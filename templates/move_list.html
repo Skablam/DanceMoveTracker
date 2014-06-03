@@ -48,27 +48,16 @@
                     <th>Video Link</th>
                     <th>Fav</th>
                 </tr>
-                <tr>
-                    <td >Swingout</td>
-                    <td>Lindyhop</td>
-                    <td>#Lindyhop #8-beat #Swingout</td>
-                    <td><a href="www.google.com">www.google.com</a></td>
-                    <td><img id="fav-star" src="{{ url_for('static', filename = 'images/not-fav.png') }}" alt="Favourite Star" width="20" height="20"/></td>
-                </tr>
-                <tr>
-                    <td>Circle</td>
-                    <td>Lindyhop</td>
-                    <td>#Lindyhop #8-beat #Circle</td>
-                    <td></td>
-                    <td></td>
-                </tr>
-                <tr>
-                    <td>Texas Tommy</td>
-                    <td>Lindyhop</td>
-                    <td>#Lindyhop #8-beat #Texas Tommy</td>
-                    <td></td>
-                    <td></td>
-                </tr>
+
+                {% for i in move_list %}
+                    <tr>
+                        <td>{{ i["Name"] }}</td>
+                        <td>{{ i["Category"] }}</td>
+                        <td>{{ i["Tags"] }}</td>
+                        <td>{{ i["Video_link"] }}</td>
+                        <td><img id="fav-star" src="{{ url_for('static', filename = 'images/not-fav.png') }}" alt="Favourite Star" width="20" height="20"/></td>
+                    </tr>
+                {% endfor %}
         	  </table>
             </div>
         </div>

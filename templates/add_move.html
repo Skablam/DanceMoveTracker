@@ -14,12 +14,12 @@
 
 	<div class="col-md-6">
 
-		<form role="form">
+		<form role="form" action="/addmove" method="post">
 			<div class="form-group">
 				<label for="movename">Name</label>
-				<input type="text" class="form-control" id="movename"><br>
+				<input type="text" class="form-control" name="movename"><br>
 				<label for="category">Category</label>
-       			<select class="form-control" id="category">
+       			<select class="form-control" name="category">
        			  <option></option>
         		  <option>Lindyhop</option>
         		  <option>Jive</option>
@@ -27,13 +27,13 @@
         		  <option>Tango</option>
         		</select><br>
 				<label for="movetags">Tags</label>
-				<textarea class="form-control" id="movetags" placeholder="i.e. 8-beat, smooth, aerial..."></textarea><br>  
-				<label for="move-video-link">Video Link</label>
-				<input type="url" class="form-control" id="move-video-link"><br>
+				<textarea class="form-control" name="movetags" placeholder="i.e. 8-beat, smooth, aerial..."></textarea><br>  
+				<label for="videolink">Video Link</label>
+				<input type="url" class="form-control" name="videolink"><br>
 
 				<br><br>
 
-				<a href="" class="btn btn-success">add move</a>
+				<button type="submit" class="btn btn-success">add move</button>
 			</div>
 		</form>
 

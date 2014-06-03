@@ -12,14 +12,14 @@
 
 <div class="row">
 	<div class="col-lg-6">
-		<form role="form">
+		<form role="form" action="/login" method="post">
 			<div class="form-group">
 				<label for="username">Username</label>
-				<input type="text" class="form-control" id="username"><br>
-				<label for="login-password">Password</label>
-				<input type="password" class="form-control" id="login-password">
+				<input type="text" class="form-control" name="username"><br>
+				<label for="password">Password</label>
+				<input type="password" class="form-control" name="password">
 				<br>
-				<a href="" class="btn btn-lg btn-primary">login</a>
+				<button type="submit" class="btn btn-lg btn-primary">login</button>
 				<br><br>
 
 				<p>Don't have an account? <a href="/register">register here</a></p>
