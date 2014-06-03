@@ -22,7 +22,13 @@
 	            <li id="lessonlist"><a href="/lessonlist">Your Lesson List</a></li>
 	            <li id="about"><a href="/about">About</a></li>
 	            <li id="contact"><a href="/contact">Contact</a></li>
-	            <li id="login"><a href="/login">Login</a></li>
+                {% if g.user.is_authenticated() %}
+                    <li><a id="logout" href="/logout">Logout</a></li>
+                {% endif %}
+                {% if not g.user.is_authenticated() %}
+                    <li><a id="login" href="/login">Login</a></li>
+                    <li><a id="register" href="/register">Register</a></li>
+                {% endif %}
 	          </ul>
 	        </div>
 	      </div>
@@ -30,7 +36,16 @@
 
 	    <div class="container" id="main-container">
 
-			{% block body %}{% endblock %}		
+			{% block body %}{% endblock %}
+		    {% with messages = get_flashed_messages() %}
+		    {% if messages %}
+		    <ul>
+		    {% for message in messages %}
+		        <li>{{ message }} </li>
+		    {% endfor %}
+		    </ul>
+		    {% endif %}
+		    {% endwith %}		
 
 	    </div>
 
