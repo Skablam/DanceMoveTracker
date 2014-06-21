@@ -1,7 +1,7 @@
 import os
 import json
 import requests
-from flask import Flask, render_template, session, request, redirect, flash, g
+from flask import Flask, render_template, session, request, redirect, flash, g, send_from_directory
 from flask.ext.assets import Environment, Bundle
 from flask.ext.login import LoginManager, login_user , logout_user , current_user , login_required, UserMixin
 from flask_debugtoolbar import DebugToolbarExtension
@@ -96,13 +96,13 @@ def addmove():
     print payload
     print header
 
-    r = requests.post(MyDanceMoves_Service + "/addmove", data=payload, headers=header)
+    r = requests.post(MyDanceMoves_Service + "/move", data=payload, headers=header)
     return redirect('/movelist') 
 
 @app.route('/logout')
 def logout():
     logout_user()
-    return redirect('/')
+    return redirect('/login')
 
 @app.route("/login", methods=['GET', 'POST'])
 def login():
