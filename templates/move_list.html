@@ -4,49 +4,23 @@
 
 {% block body %}
 
-	<br>
+   <div class="">
 
-   <h1>Your Move List</h1>
+        <br><br>   
 
-   <br><br>    
+    	<div class="row">
 
-    <div class="row">
+            <div class="col-md-12 content-div">
+              <h1 class="centre-text">My Move List</h1>
 
-        <div class="col-md-6">
-            <form class="form-inline" role="form" name="move-filter">
-        	  <div class="form-group">	
-        		<input class="form-control" type="text" name ="move-text" placeholder ="Filter">
-        		<select class="form-control">
-        		  <option>Name</option>
-        		  <option>Description</option>
-        		  <option>Category</option>
-        		  <option>Tags</option>
-        		</select>
-        	  </div>
-        	</form>
-        </div>
-        <div class="col-md-6">
-            <a href="/addmove" class="btn btn-primary add-new-move"><span class="glyphicon glyphicon-plus"></span> add new move</a>
-            <br>
-        </div>
-
-    </div>
-
-
-
-	<div class="row">
-
-        <div class="col-md-12">
-            <div class="panel panel-default">
-
-        	  <!-- Table -->
-        	  <table class="table">
+        	  <table id="hor-minimalist-a">
                 <tr>
                     <th>Name</th>
                     <th>Category</th>
                     <th>Tags</th>
                     <th>Video Link</th>
-                    <th>Fav</th>
+                    <th>Awesome Move</th>
+                    <th>Edit</th>
                 </tr>
 
                 {% for i in move_list %}
@@ -56,12 +30,17 @@
                         <td>{{ i["Tags"] }}</td>
                         <td>{{ i["Video_link"] }}</td>
                         <td><img id="fav-star" src="{{ url_for('static', filename = 'images/not-fav.png') }}" alt="Favourite Star" width="20" height="20"/></td>
+                        <td><a href="/editmove" class="btn btn-primary">edit move</a></td>
                     </tr>
                 {% endfor %}
         	  </table>
+
+              <a href="/addmove" class="btn btn-primary add-new-move"><span class="glyphicon glyphicon-plus"></span> add new move</a>
+              <br><br>
             </div>
-        </div>
-	</div>
+    	</div>
+        <br>
+    </div>
 
 {% endblock %}
 
@@ -71,13 +50,13 @@
 
 	$("#movelist").addClass("active");	
 
-    $(document).ready(function(){
+    // $(document).ready(function(){
 
-        $("#fav-star").click{
+    //     $("#fav-star").click{
             
-        }
+    //     }
 
-    }); 
+    // }); 
 
 </script>
 

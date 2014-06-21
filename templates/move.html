@@ -10,16 +10,16 @@
 
 	<div class="col-md-6 col-md-offset-3">
 
-		<h1>Add new move</h1>
+		<h1>{{ title }}</h1>
 
 		<br>
 
 		<form role="form" action="/addmove" method="post">
 			<div class="form-group">
 				<label for="movename">Name</label>
-				<input type="text" class="form-control" name="movename"><br>
+				<input type="text" class="form-control" name="movename" value="{{ movename }}"><br>
 				<label for="category">Category</label>
-       			<select class="form-control" name="category">
+       			<select class="form-control" name="category" value="{{ category }}">
        			  <option></option>
         		  <option>Lindyhop</option>
         		  <option>Jive</option>
@@ -27,13 +27,13 @@
         		  <option>Tango</option>
         		</select><br>
 				<label for="movetags">Tags</label>
-				<textarea class="form-control" name="movetags" placeholder="i.e. 8-beat, smooth, aerial..."></textarea><br>  
+				<textarea class="form-control" name="movetags" placeholder="i.e. 8-beat, smooth, aerial..." value="{{ movetags }}"></textarea><br>  
 				<label for="videolink">Video Link</label>
-				<input type="url" class="form-control" name="videolink"><br>
+				<input type="url" class="form-control" name="videolink" value="{{ url }}"><br>
 
 				<br><br>
 
-				<button type="submit" class="btn btn-success">add move</button>
+				<button type="submit" class="btn btn-success">{{ move-button }}</button>
 			</div>
 		</form>
 
