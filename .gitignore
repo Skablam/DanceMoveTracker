@@ -2,6 +2,10 @@
 __pycache__/
 *.py[cod]
 
+.DS_Store
+
+.vagrant
+
 *.pyc
 static/build
 .webassets-cache/
@@ -28,5 +32,3 @@ var/
 # Installer logs
 pip-log.txt
 pip-delete-this-directory.txt
-
-

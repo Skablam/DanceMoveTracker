@@ -1,0 +1,28 @@
+{% extends "base.html" %}
+
+{% block head %}{% endblock %}
+
+{% block body %}
+
+<br><br>
+
+<div class="row">
+  <div class="col-lg-6 col-md-offset-3 content-div">
+    <h1>Register</h1>
+
+    <form action="/register" method="POST" name="register_user_form">
+      {{ register_user_form.hidden_tag() }}
+
+      <label for="email">Email Address</label>
+      <input id="email" class="form-control" name="email" type="text" value=""><br>
+      <label for="password">Password</label>
+      <input id="password" class="form-control" name="password" type="password" value=""><br>
+      <label for="password_confirm">Retype Password</label>
+      <input id="password_confirm" class="form-control" name="password_confirm" type="password" value=""><br>
+      <input id="submit" class="btn btn-lg btn-primary" name="submit" type="submit" value="Register">
+
+    </form>
+  </div>
+</div>
+
+{% endblock %}

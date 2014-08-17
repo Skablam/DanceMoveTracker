@@ -1,0 +1,80 @@
+{% extends "base.html" %}
+
+{% block head %}{% endblock %}
+
+{% block body %}
+
+   <div>
+
+      <br><br>
+
+    	<div class="row">
+
+            <div class="col-md-12 content-div">
+              <h1 class="centre-text">My Move List</h1>
+
+          	  <table id="hor-minimalist-a">
+                  <tr>
+                      <th>Name</th>
+                      <th>Category</th>
+                      <th>Tags</th>
+                      <th>Video Link</th>
+                      <th></th>
+                  </tr>
+
+                  {% for i in move_list %}
+                      <tr>
+                          <td>{{ i.movename }}</td>
+                          <td>{{ i.category }}</td>
+                          <td>{{ i.movetags }}</td>
+                          <td>{{ i.video_link }}</td>
+                          <td>
+                            <a href="/editmove/{{ i.id }}"  class="btn btn-primary"><span class="glyphicon glyphicon-pencil"></span></a>
+                            <a href="#delete-move-model" data-toggle="modal" data-id="{{ i.id }}" class="btn btn-primary delete-move"><span class="glyphicon glyphicon-trash"></span></a>
+                          </td>
+                      </tr>
+                  {% endfor %}
+          	  </table>
+
+              <a href="/addmove" class="btn btn-success add-new"><span class="glyphicon glyphicon-plus"></span> add new move</a>
+              <br><br>
+            </div>
+    	</div>
+      <br>
+    </div>
+
+
+    <div class="modal fade" id="delete-move-model" tabindex="-1" role="dialog" aria-labelledby="delete-move-labrel" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+            <h4 class="modal-title" id="myModalLabel">Delete move</h4>
+          </div>
+          <div class="modal-body">
+            Are you sure you want to delete this move?
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-default" data-dismiss="modal">No</button>
+            <a href="/" id="delete-move" class="btn btn-primary">Yes</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+{% endblock %}
+
+{% block extra_js %}
+
+<script type="text/javascript" src="{{ url_for('static', filename='javascripts/bootstrap/modal.js') }} "></script>
+
+<script type="text/javascript">
+
+  $(document).on("click", ".delete-move", function () {
+       var moveId = $(this).data('id');
+       $(".modal-footer #delete-move").attr('href', '/deletemove/' + moveId);
+  });
+
+</script>
+
+{% endblock %}

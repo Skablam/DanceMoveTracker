@@ -1,0 +1,65 @@
+<html>
+	<head>
+
+		<title>MyDanceMoves.com</title>
+
+		{% assets "css_main" %}
+	      <link href="{{ ASSET_URL }}" media="all" rel="stylesheet" type="text/css">
+	  {% endassets %}
+
+	    <link rel="shortcut icon" href="{{ url_for('static', filename='images/favicon.ico') }}">
+
+		{% block head %}{% endblock %}
+
+	</head>
+
+	<body class="base-body">
+	    <div id="header" class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+	      <div class="container">
+	        <div class="navbar-header">
+	          <a class="navbar-brand" href="/">MyDanceMoves.com</a>
+	        </div>
+	        <div class="collapse navbar-collapse">
+	          <ul class="nav navbar-nav">
+	            <li id="home"><a href="/">Home</a></li>
+	            <li id="movelist"><a href="/movelist">My Move List</a></li>
+	            <li id="lessonlist"><a href="/lessonlist">My Lesson List</a></li>
+	            <li id="about"><a href="/about">About</a></li>
+	            <li id="contact"><a href="/contact">Contact</a></li>
+                {% if current_user.is_authenticated() %}
+                    <li><a id="logout" href="/logout">Logout</a></li>
+                {% endif %}
+                {% if not current_user.is_authenticated() %}
+                    <li><a id="login" href="/login">Login</a></li>
+                    <li><a id="register" href="/register">Register</a></li>
+                {% endif %}
+	          </ul>
+	        </div>
+	      </div>
+	    </div>
+
+	    <div class="container" id="main-container">
+
+			{% block body %}{% endblock %}
+		    {% with messages = get_flashed_messages() %}
+		    {% if messages %}
+		    <ul>
+		    {% for message in messages %}
+		        <li>{{ message }} </li>
+		    {% endfor %}
+		    </ul>
+		    {% endif %}
+		    {% endwith %}
+
+	    </div>
+
+		<div id="footer" class="footer">
+	      <img class="icon" src="{{ url_for('static', filename = 'images/dancers.png') }}" alt="Tea Dance" width="50" height="52"/>
+	  </div>
+
+		<script src="//code.jquery.com/jquery-1.11.0.min.js"></script>
+
+		{% block extra_js %}{% endblock %}
+
+	</body>
+</html>
