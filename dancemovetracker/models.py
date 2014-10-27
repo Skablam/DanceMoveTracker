@@ -1,5 +1,5 @@
 from flask.ext.security import UserMixin, RoleMixin
-from mydancemoves import db
+from dancemovetracker import db
 
 # Define models
 roles_users = db.Table('roles_users',

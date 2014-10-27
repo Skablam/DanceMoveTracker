@@ -1,8 +1,8 @@
 import os
 from flask.ext.script import Manager
 from flask.ext.migrate import Migrate, MigrateCommand
-from mydancemoves.models import *
-from mydancemoves import app, db
+from dancemovetracker.models import *
+from dancemovetracker import app, db
 
 app.config.from_object(os.environ['SETTINGS'])
 
