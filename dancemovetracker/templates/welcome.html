@@ -3,14 +3,70 @@
 {% block head %}{% endblock %}
 
 {% block body %}
-	<br><br>
 
-	<div class="jumbotron">
-		<h1>Welcome to Dance Move Tracker</h1
-		<p class="lead">Keep track of the dance moves you learn as well as search for moves that others have recorded.</p>
-		<p><a class="btn btn-lg btn-primary" href="#" role="button">Get Started</a></p>
+	<div class="dancers-image">
+		<div class="container">
+			<div class="row">
+
+				<div class="col-xs-12 text-center welcome-text">
+					<h1>DanceMoveTracker.com</h1>
+				</div>
+
+				<div class="col-xs-6 col-xs-offset-3 col-md-2 col-md-offset-5 text-center">
+					<h1 class="white-border">START</h1>
+				</div>
+
+			</div>
+		</div>
 	</div>
 
+	<div class="key-actions">
+		<div class="container">
+			<div class="row">
+				<div class="add-move col-xs-2 col-xs-offset-2"></div>
+				<div class="add-lesson col-xs-2 col-xs-offset-1"></div>
+				<div class="add-video col-xs-2 col-xs-offset-1"></div>
+			</div>
+			<div class="row" style="text-align: center; color:white">
+				<div class="col-xs-2 col-xs-offset-2">Add move</div>
+				<div class="col-xs-2 col-xs-offset-1">Add lesson</div>
+				<div class="col-xs-2 col-xs-offset-1">Search</div>
+			</div>
+		</div>
+	</div>
+
+	<div class="white-arrows">
+		<div class="container">
+			<div class="row">
+				<div class="col-xs-2 col-xs-offset-2">
+					<svg xmlns="http://www.w3.org/2000/svg" version="1.1" class="svg-triangle">
+							<polygon points="0,0 50,0 25,12"/>
+					</svg>
+				</div>
+				<div class="col-xs-2 col-xs-offset-1">
+					<svg xmlns="http://www.w3.org/2000/svg" version="1.1" class="svg-triangle">
+							<polygon points="0,0 50,0 25,12"/>
+					</svg>
+				</div>
+				<div class="col-xs-2 col-xs-offset-1">
+					<svg xmlns="http://www.w3.org/2000/svg" version="1.1" class="svg-triangle">
+							<polygon points="0,0 50,0 25,12"/>
+					</svg>
+				</div>
+			</div>
+		</div>
+
+	</div>
+
+	<div style="background-color:black;height:200px">
+		<div class="container">
+			<div class="row" style="text-align: center; color:white; padding-top:20px">
+				<div class="col-xs-2 col-xs-offset-2">Keep track of dance moves you have learnt, or would like to learn. You can upload videos of your moves too.</div>
+				<div class="col-xs-2 col-xs-offset-1">Keep track of dance lessons you have attended including the moves that were them. You can also upload a video of a lesson summary.</div>
+				<div class="col-xs-2 col-xs-offset-1">Search for a move you want to learn, either in your move list or the move list of other DanceMoveTracker users.</div>
+			</div>
+		</div>
+	</div>
 {% endblock %}
 
 {% block extra_js %}

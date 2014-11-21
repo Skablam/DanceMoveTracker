@@ -4,16 +4,17 @@
 
 {% block body %}
 
-   <div>
+  <div class="singingintherain">
 
-      <br><br>
+    <div class="container">
 
-    	<div class="row">
+      <div class="row row-padding">
 
-            <div class="col-md-12 content-div">
-              <h1 class="centre-text">My Move List</h1>
+            <div class="col-md-10 col-md-offset-1 movelist">
+              <h1 class="centre-text">Moves</h1>
 
-          	  <table id="hor-minimalist-a">
+          	  <table class="table" style="margin-top:30px">
+                <thead>
                   <tr>
                       <th>Name</th>
                       <th>Category</th>
@@ -21,27 +22,32 @@
                       <th>Video Link</th>
                       <th></th>
                   </tr>
+                </thead>
+                <tbody>
 
                   {% for i in move_list %}
                       <tr>
                           <td>{{ i.movename }}</td>
                           <td>{{ i.category }}</td>
                           <td>{{ i.movetags }}</td>
-                          <td>{{ i.video_link }}</td>
+                          <td><a href="{{ i.video_link }}">{{ i.video_link }}</a></td>
                           <td>
-                            <a href="/editmove/{{ i.id }}"  class="btn btn-primary"><span class="glyphicon glyphicon-pencil"></span></a>
-                            <a href="#delete-move-model" data-toggle="modal" data-id="{{ i.id }}" class="btn btn-primary delete-move"><span class="glyphicon glyphicon-trash"></span></a>
+                            <a href="#delete-move-model" data-toggle="modal" data-id="{{ i.id }}" class="btn delete-move move-button"><span class="glyphicon glyphicon-trash"></span></a>
+                            <a href="/editmove/{{ i.id }}"  class="btn move-button"><span class="glyphicon glyphicon-pencil"></span></a>                          
                           </td>
                       </tr>
                   {% endfor %}
+
+                </tbody>
           	  </table>
 
-              <a href="/addmove" class="btn btn-success add-new"><span class="glyphicon glyphicon-plus"></span> add new move</a>
-              <br><br>
+              <a href="/addmove" class="btn add-new"><span class="glyphicon glyphicon-plus"></span> add new move</a>
             </div>
     	</div>
-      <br>
+
     </div>
+
+  </div>
 
 
     <div class="modal fade" id="delete-move-model" tabindex="-1" role="dialog" aria-labelledby="delete-move-labrel" aria-hidden="true">

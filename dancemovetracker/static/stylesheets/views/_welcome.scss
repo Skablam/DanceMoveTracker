@@ -1,5 +1,84 @@
-.jumbotron {
-  text-align: center;
-  border-bottom: 1px solid #e5e5e5;
+.dancers-image {
+  background: url('/static/images/welcome.jpg') no-repeat;
+  background-size:cover;
+  height:500px;
+  max-width:100%;
+  color:white;
+  background-position: right; 
 }
- 
+
+.white-border {
+  border:4px solid white;
+}
+
+.welcome-text {
+  padding-top: 120px;
+}
+
+/*reduce font size of h1 for mobile devices*/
+.welcome-text > h1 {
+
+  @media (max-width: 480px) {
+    font-size: 28px;
+  }
+
+}
+
+.key-actions {
+
+  background-color:#69D9D5;
+  height:200px;
+  padding-top: 10px;
+
+}
+
+.add-move {
+
+  background: url('/static/images/dancer-hat.png') no-repeat;
+  background-size:contain;
+  background-position:center;
+  height:75%;
+  max-width:100%;
+
+}
+
+.add-lesson {
+
+  background: url('/static/images/dancer-tip.png') no-repeat;
+  background-size:contain;
+  background-position:center;
+  height:75%;
+  max-width:100%;
+
+}
+
+.add-video {
+
+  background: url('/static/images/dancer-jump.png') no-repeat;
+  background-size:contain;
+  background-position:center;
+  height:75%;
+  max-width:100%;
+
+}
+
+.white-arrows {
+
+  height:5px;
+  background-color:white;
+
+}
+
+.svg-triangle{
+  width: 50px;
+  height: 12px;
+  position: relative;
+  margin: 0 auto;
+  display: block;
+}
+
+.svg-triangle polygon {
+  fill:white;
+  stroke:white;
+  stroke-width:2;
+}

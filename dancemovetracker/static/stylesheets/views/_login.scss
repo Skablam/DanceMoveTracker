@@ -1,0 +1,29 @@
+.breakdance {
+
+  background: url('/static/images/break_dance_on_the_train.jpg') no-repeat;
+  background-size:cover;
+  height:700px;
+  max-width:100%;
+  color:white;
+  background-position: center;
+
+}
+
+.login-form {
+
+  @extend .black-box;
+
+  text-align: left;
+
+}
+
+.login-form a {
+
+  color: $main-color
+}
+
+#login-submit {
+
+  background-color: $main-color
+
+}

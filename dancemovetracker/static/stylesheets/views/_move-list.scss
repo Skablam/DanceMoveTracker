@@ -1,11 +1,47 @@
 .add-new {
 
+	margin-bottom:10px !important;
 	float: right;
+	background-color: $main-color;
+
+}
+
+.move-button {
+
+	float:right;
 
 }
 
 .centre-text {
 
 	text-align: center;
+
+}
+
+.singingintherain {
+
+	background: black url('/static/images/singinintherain.jpg') no-repeat;
+	background-size:contain;
+	height:700px;
+	max-width:100%;
+	background-position: center;
+
+}
+
+.movelist {
+
+	@extend .black-box;
+
+	th, td, a {
+
+		color: white;
+
+	}
+
+	a:hover {
+
+		color: $main-color;
+
+	}
 
 }
