@@ -1,8 +1,8 @@
 .ballroom {
 
 	background: black url('/static/images/ballroom.jpg') no-repeat;
-	background-size:cover;
-	height:900px;
+	background-size:contain;
+	height:700px;
 	max-width:100%;
 	color:white;
 	background-position: center;

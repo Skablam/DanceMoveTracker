@@ -4,16 +4,17 @@
 
 {% block body %}
 
-<div>
+<div class="breakdance3">
 
-	<br><br>
+	<div class="container">
 
-	<div class="row">
+		<div class="row row-padding">
 
-				<div class="col-md-12 content-div">
-					<h1 class="centre-text">My Lesson List</h1>
+			<div class="col-md-10 col-md-offset-1 white-table">
+					<h1 class="centre-text">Lessons</h1>
 
-					<table id="hor-minimalist-a">
+					<table class="table">
+						<thead>
 							<tr>
 									<th>Date</th>
 									<th>Category</th>
@@ -21,6 +22,9 @@
 									<th>Video Link</th>
 									<th></th>
 							</tr>
+						</thead>
+
+						<tbody>
 
 							{% for i in lesson_list %}
 									<tr>
@@ -29,18 +33,23 @@
 											<td>{{ i.teachers }}</td>
 											<td>{{ i.video_link }}</td>
 											<td>
-												<a href="/editlesson/{{ i.id }}"  class="btn btn-primary"><span class="glyphicon glyphicon-pencil"></span></a>
-												<a href="#delete-lesson-model" data-toggle="modal" data-id="{{ i.id }}" class="btn btn-primary delete-lesson"><span class="glyphicon glyphicon-trash"></span></a>
+												<a href="/editlesson/{{ i.id }}"  class="btn manage-button"><span class="glyphicon glyphicon-pencil"></span></a>
+												<a href="#delete-lesson-model" data-toggle="modal" data-id="{{ i.id }}" class="btn manage-button delete-lesson"><span class="glyphicon glyphicon-trash"></span></a>
 											</td>
 									</tr>
 							{% endfor %}
+
+						</tbody>
 					</table>
 
 					<a href="/addlesson" class="btn add-new"><span class="glyphicon glyphicon-plus"></span> add new lesson</a>
 					<br><br>
-				</div>
+			</div>
+
+		</div>
+
 	</div>
-	<br>
+
 </div>
 
 <div class="modal fade" id="delete-lesson-model" tabindex="-1" role="dialog" aria-labelledby="delete-lesson-labrel" aria-hidden="true">

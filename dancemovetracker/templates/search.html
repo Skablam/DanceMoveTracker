@@ -1,0 +1,32 @@
+{% extends "base.html" %}
+
+{% block head %}{% endblock %}
+
+{% block body %}
+
+<div class="">
+  <div class="container">
+    <div class="row row-padding">
+      <div class="col-md-6 col-md-offset-3">
+          <h1>Search for moves</h1>
+
+          <br>
+
+          <form role="form" action="/search_results" method="post">
+            <br>
+            <div class="form-group">
+              <label>Search scope</label><br>
+              <label class="radio-inline"><input type="radio" name="searchscope">Own moves</label>
+              <label class="radio-inline"><input type="radio" name="searchscope">Everybody's moves</label><br><br>
+              <label for="movename">Move name</label>
+              <input type="text" class="form-control" name="movename"><br>
+              <button type="submit" class="btn btn-lg background-main-color">search</button>
+            </div>
+          </form>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+{% endblock %}

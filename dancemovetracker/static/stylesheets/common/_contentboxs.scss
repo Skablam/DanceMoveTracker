@@ -6,3 +6,17 @@
   color:white;
 
 }
+
+.bg-main-color {
+
+  background-color:$main-color;
+
+}
+
+.normal-button {
+
+  @extend bg-main-color;
+
+  color:white;
+
+}

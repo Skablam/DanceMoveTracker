@@ -2,18 +2,10 @@
 
 echo 'export DEBUG_ON=True' >> /home/vagrant/.bash_profile
 
-sudo apt-get update
+cd /vagrant
 
-sudo apt-get install -y python-dev
-
-sudo apt-get install -y libpq-dev
-
-sudo apt-get install -y python-pip
-
-sudo pip install -r /vagrant/requirements.txt
+source /vagrant/install.sh
 
 gem install bundler
-
-cd /vagrant
 
 bundle install
