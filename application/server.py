@@ -2,7 +2,7 @@ import os
 import json
 import requests
 import bcrypt
-from dancemovetracker import app, db
+from application import app, db
 from flask import render_template, session, request, redirect, flash, g, send_from_directory
 from flask.ext.security import login_required, current_user, Security, SQLAlchemyUserDatastore
 from flask.ext.security.utils import *

@@ -1,6 +1,6 @@
 #!flask/bin/python
 from werkzeug.contrib.profiler import ProfilerMiddleware
-from MyDanceMoves import app
+from application.server import app
 
 app.config['PROFILE'] = True
 app.wsgi_app = ProfilerMiddleware(app.wsgi_app, restrictions = [150])
